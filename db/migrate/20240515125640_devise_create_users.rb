@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       # t.datetime :
 
       t.string :name
-      t.text :introduction
+      t.string :introduction
 
       t.timestamps null: false
     end
