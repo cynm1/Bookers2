@@ -19,12 +19,12 @@
           <a class="navbar-brand" href="/">
             <span>Bookers</span>
           </a>
-          <% if user_signed_in? %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
               <li>
                 <i class="fa-solid fa-house" style="color:white;"></i>
                 <%= link_to "Home", root_path, class: "nav-link text-light" %>
@@ -41,7 +41,7 @@
                 <i class="fa-solid fa-right-from-bracket" style="color:white;"></i>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-light" %>
               </li>
-          <% else %>
+            <% else %>
               <li>
                 <i class="fa-solid fa-house" style="color:white;"></i>
                 <%= link_to "Home", root_path, class: "nav-link text-light" %>
@@ -58,7 +58,7 @@
                 <i class="fa-solid fa-right-to-bracket" style="color:white;"></i>
                 <%= link_to "Log in", new_user_session_path, class: "nav-link text-light" %>
               </li>
-          <% end %>
+            <% end %>
             </ul>
           </div>
           </div>
