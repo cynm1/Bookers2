@@ -9,7 +9,7 @@
           <%= f.text_field :title, autofocus: true, id:"inputTitle", placeholder:"Title" %><br>
           <label for="inputBody">Opinion</label><br>
           <%= f.text_area :body, autofocus: true, id:"inputBody", placeholder:"Body" %><br>
-          <%= f.submit "Update Book" %><br>
+          <button type="submit" class="btn btn-success">Update Book</button>
         <% end %>
           <%= link_to "Show", @book %>|
           <%= link_to "Back", :back %>

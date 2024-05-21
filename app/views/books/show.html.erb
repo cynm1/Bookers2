@@ -19,12 +19,10 @@
           <%= @book.body %>
         </td>
         <td>
-          <button type="button" class="btn btn-success"><%= link_to "Edit",edit_book_path %></button>
+          <%= link_to "Edit",edit_book_path, class:"btn btn-success" %>
         </td>
         <td>
-          <button type="button" class="btn btn-danger">
-            <%= link_to "Destroy", book_path(@book), method: :delete %>
-          </button>
+          <%= link_to "Destroy", book_path(@book), method: :delete, class:"btn btn-danger" %>
         </td>
       </tr>
     </tbody>
