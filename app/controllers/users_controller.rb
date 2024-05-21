@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   
   def show
     @user = current_user
-    @books = @user.books
+    @books = Book.all
   end
 
   def edit
