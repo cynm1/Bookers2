@@ -4,6 +4,26 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     @user_path
   end
+  
+  def new
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Signed up successfully."
+      redirect_to user_path(@user.id)
+    else
+      render :new
+    end
+  end
+  
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Signed in successfully."
+      redirect_to user_path(@user.id)
+    else
+      render :new
+    end
+  end
 
   protected
 

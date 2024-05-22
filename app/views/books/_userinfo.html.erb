@@ -5,7 +5,7 @@
       <div class="col-md-3">
         <h2>User info</h2>
         <div>
-         <%= image_tag @user.get_profile_image(100,100) %>
+         <%= image_tag @user.get_profile_image(100,100) if @user.present? %>
         </div>
         <table class="table">
         <tbody>
