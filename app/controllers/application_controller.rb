@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
+  before_action :authenticate_user!, except: [:top]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
     @user_path
   end
-  
+
   def new
     @user = User.new(user_params)
     if @user.save
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
       render :new
     end
   end
-  
+
   def create
     @user = User.new(user_params)
     if @user.save
