@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     unless user.id == current_user.id
       redirect_to user_path(@user.id)
     end
-      @user = current_user
+    @user = current_user
   end
 
   def update
@@ -32,4 +32,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
   end
+
 end
