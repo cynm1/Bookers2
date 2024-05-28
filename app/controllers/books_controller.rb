@@ -6,6 +6,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @user = @book.user
     @book.user_id = current_user.id
     if @book.save
       flash[:notice] = "You have created book successfully."
@@ -53,6 +54,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :profile_image)
   end
 end
